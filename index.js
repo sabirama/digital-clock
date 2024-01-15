@@ -1,8 +1,8 @@
 let format12hr = false;
-let formatter = 1;
+let formatter = 0;
 setInterval(()=> {
     const date = new Date();
-    let hours = [...(date.getHours()/formatter).toFixed(0).toString()];
+    let hours = [...(date.getHours()-formatter).toFixed(0).toString()];
     let minutes = [...(date.getMinutes()).toString()];
     let seconds = [...(date.getSeconds()).toString()];
 
@@ -68,9 +68,9 @@ const resize = () => {
 function setTimeFormat () {
     if(format12hr == true) {
         format12hr = false;
-        formatter = 1;
+        formatter = 0;
     } else {
         format12hr = true;
-        formatter = 2;
+        formatter = 12;
     }
 }
