@@ -74,8 +74,20 @@ button {
     border-radius: 4px;
     padding: 0 4px;
     transform: scale(20%);
+    color: lightgoldenrodyellow;
+}
+#format {
     position: absolute;
     top: -55%;
     left: -22%;
+}
+
+#format span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    font-size: 4px;
+    top: 40%;
+    left: 65%;
     color: lightgoldenrodyellow;
+
 }

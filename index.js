@@ -1,8 +1,10 @@
 let format12hr = false;
 let formatter = 0;
+const formatText = document.getElementById('format-text');
+
 setInterval(()=> {
     const date = new Date();
-    let hours = [...(date.getHours()-formatter).toFixed(0).toString()];
+    let hours = [...(date.getHours() > 12 ? date.getHours()-formatter : date.getHours()).toFixed(0).toString()];
     let minutes = [...(date.getMinutes()).toString()];
     let seconds = [...(date.getSeconds()).toString()];
 
@@ -54,6 +56,7 @@ document.getElementById('format').addEventListener('click', ()=> {
 
 window.addEventListener('DOMContentLoaded', () => {
     resize();
+    formatText.textContent = '24hr'
 });
 
 window.addEventListener('resize', () => {
@@ -69,8 +72,10 @@ function setTimeFormat () {
     if(format12hr == true) {
         format12hr = false;
         formatter = 0;
+        formatText.textContent = '24hr'
     } else {
         format12hr = true;
         formatter = 12;
+        formatText.textContent = '12hr'
     }
 }
